@@ -1,0 +1,52 @@
+  
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
+<html>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>  
+<title>login</title>  
+<script type="text/javascript" src="../js/lib/jquery-1.7.2.min.js"></script>  
+<script type="text/javascript" src="../js/lib/base64.js"></script>  
+<script type="text/javascript"> 
+ 
+function rsalogin(){  
+    var thisPwd = document.getElementById("password").value;  
+    var result = encryptedString(key, encodeURIComponent(thisPwd)); 
+    $("#password").val(result);
+} 
+$(document).ready(function (){
+	$("#button1").click(function(){
+	    var thisPwd = $("#password").val();
+	    alert(thisPwd);
+	    var result = base64decode(thisPwd); 
+	    $("#password").val(result);
+	});
+	$("#button2").click(function(){
+		var thisPwd = $("#password").val();
+	    var result = base64encode(thisPwd); 
+	    $("#password").val(result);
+	});
+});
+</script> 
+</head>  
+  
+<body>  
+    <form method="post" name="loginForm" target=_blank  >  
+        <table border="0">  
+            <tr>  
+                <td>  
+                    	测试：
+                </td>  
+                <td>  
+                    <input type='text' name="password" id=password style='width:400px' value="加密内容"/>  
+                </td>  
+            </tr>  
+            <tr>  
+                <td colspan="2" align="center">  
+                    <input type="button" value="加密" id="button1" />  
+                    <input type="button" value="解密" id="button2" />  
+                </td>  
+            </tr>  
+        </table>  
+    </form>  
+</body>  
+</html>  

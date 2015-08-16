@@ -18,9 +18,6 @@ public class Base64Util {
         			e.printStackTrace();
         		}
     		    System.out.println("解密前:"+strafter+" 解密后:"+encafter);
-    		    
-    		    
-    		    
     		    encbefore = "mytests12";
     		    try {
 					String adc =new String(new BASE64Decoder().decodeBuffer(encbefore));

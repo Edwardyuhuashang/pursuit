@@ -1,5 +1,6 @@
 package pur.ultimate.test.log;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
@@ -14,6 +15,7 @@ public class TestLog {
 	public String log (){
 		try {
 			Properties prop = new Properties();
+			System.out.println(new File(".").getAbsolutePath());
 			URL url = this.getClass().getResource("/properties/log4j.properties");
 			prop.load(url.openStream());
 			PropertyConfigurator.configure(prop); 

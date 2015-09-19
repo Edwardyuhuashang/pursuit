@@ -43,5 +43,7 @@ public class DformConfigListener implements ServletContextListener  {
 		}
 		
 	}
-
+	public void initlog(){
+		initLog4j();
+	}
 }
